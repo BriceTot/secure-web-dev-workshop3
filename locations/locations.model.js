@@ -8,14 +8,16 @@ const filmSchema = new mongoose.Schema({
 	district: Number,
 	geolocation: {
 		coordinates: [Number],
-		type: { type: String },
+		type: String,
 	},
 	sourceLocationId: String,
 	filmDirectorName: String,
 	address: String,
 	startDate: Date,
 	year: Number,
-})
+
+}, { typeKey: '$type' }
+)
 
 const Location = mongoose.model('Location', filmSchema)
 

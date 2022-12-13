@@ -15,7 +15,6 @@ const filmSchema = new mongoose.Schema({
 	address: String,
 	startDate: Date,
 	year: Number,
-
 }, { typeKey: '$type' }
 )
 

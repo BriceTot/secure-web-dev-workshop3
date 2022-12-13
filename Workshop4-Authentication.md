@@ -89,9 +89,9 @@ router.get('/locations', (req, res) => res.send(200).body({ locations: [], user:
        routes:
         1. Register POST `/users/register`
         2. Login POST `/users/login`
-        3. Get self GET `/users/me`
-        4. Update self PUT/PATCH `/users/me`
-        5. Delete self DELETE `/users/me`
+        3. Get self GET `/users/me` (implement it later, using JWT Auth)
+        4. Update self PUT/PATCH `/users/me` (implement it later, using JWT Auth)
+        5. Delete self DELETE `/users/me` (implement it later, using JWT Auth)
         6. Get all GET `/users` (remember to not return users passwords on this route)
 2. Implement the User Registration route
     1. Ensure username is unique
@@ -99,8 +99,8 @@ router.get('/locations', (req, res) => res.send(200).body({ locations: [], user:
 3. Create a folder to store Passport Strategies (local and JWT strategies)
 4. Implement the User Login route with `passport-local`
     1. Use a `passport-local` strategy for this, as a middleware before the **route handler**:
-        1. Find the user by its username (404 if not found)
-        2. Hash the password with bcrypt and compare it with found user in Mongo (403 if not matching)
+        1. Find the user by its username
+        2. Hash the password with bcrypt and compare it with found user in Mongo (403 if not matching, Passport handles it)
     2. **Route handler**: Sign a JWT (`jsonwebtoken` package) containing the user's ID as `sub`. Use a JWT Secret from
        your `.env file`
 5. Implement a JWT Middleware with a JWT Passport Strategy (`passport-jwt`)

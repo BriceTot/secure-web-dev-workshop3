@@ -1,50 +1,8 @@
-# Workshop 3 - Create an API (ExpressJS)
+This program allow a user to register, login and do some actions on themselves and on the locations in a mongoDB database
 
-## 🌟 Goal
+First you need to create a .env file with a link to your mongoDB database in a variable named 'MONGO_URI'
+and a key for the token in a variable named 'JWT_SECRET_KEY'
 
-> Build a REST API with ExpressJS
+To start the program, run the index.js file and send requests on the 3000 port
 
-## 👷 Prerequisites
 
-1. Fork this repository then clone it on your computer
-2. install Insomnia (or your API Testing tool of choice)
-3. Paste your .env file from workshop2 containing credentials to your Mongo Database
-
-## 🗒 What to do
-
-> ⚠ Commit your changes after **each** instruction, following the commit message format:
-> ```text
-> feat(1): Initiate NPM Project
-> ```
-
-1. Install existing packages with `npm install`
-   > ```shell
-   >  npm install
-   > ```
-2. Add NPM packages `express`
-   > Mongoose is a package making mongo request easier and more secure
-   > ```shell
-   > npm install --save express
-   > ```
-3. Put your database credentials in a file named `.env` (from Workshop2)
-4. Take a look at the architecture 
-   > One Folder per entity.
-   > In each folder, 3 files:
-   > 
-   > entity.controller.js -> Presentation Layer, API
-   > 
-   > entity.service.js -> Business Logic Layer
-   > 
-   > entity.model.js -> Database Layer
-5. Implement a "Hello World" route, on GET / that returns "Hello World"
-   1. Visit the route at http://localhost:3000/
-6. Create the API CRUD for Location
-   1. Create routes at Presentation Layer
-   2. Implement business logic in the Location Service
-   > ```
-   > For reference, CRUD:
-   > Create: /locations
-   > Update: /locations/:id
-   > Request (Get All: /locations , Get One: /locations/:id)
-   > Delete: /locations/:id
-   > ```
